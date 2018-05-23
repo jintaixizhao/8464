@@ -1,0 +1,19 @@
+doctype
+html
+  head
+    meta("charset=utf-8")
+    link(rel="stylesheet" href="css/index.css")
+    title 图片转换base64码
+  body
+    div.content
+      h2 获取图片的base64码(文件上传版)
+      form(action="/",method="post",enctype="multipart/form-data")#form
+        span 文件上传：
+        input(type="text",class="modal_input",id="modalInput",placeholder="点击选择文件",onkeydown="if(event.keyCode==13)return false;")
+        input(type="file",name="logo",class="file_input",id="fileInput")
+        input(type="button",value="提交",class="btn")#send
+        input(type="button",value="复制代码",class="btn")#copyCode
+      textarea(spellcheck="false")#textarea #{info}
+    div.tip#tip
+    span.switch#toPaste(data-text="粘贴版")     
+    script(src="js/index.js")

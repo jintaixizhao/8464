@@ -1,0 +1,34 @@
+doctype
+html
+  head
+    meta("charset=utf-8")
+    link(rel="stylesheet" href="css/index.css")
+    title 图片转换base64码
+  body
+    div.content
+      h2 获取图片的base64码(粘贴截图版)
+      div.box
+        div.toolbox
+          label(for="leftTop",class="bd_label") 左上
+          input(type="text",id="leftTop",class="bd_input")
+          label(for="rightTop",class="bd_label") 右上
+          input(type="text",id="rightTop",class="bd_input")
+          label(for="rightBottom",class="bd_label") 右下
+          input(type="text",id="rightBottom",class="bd_input")
+          label(for="leftBottom",class="bd_label") 左下
+          input(type="text",id="leftBottom",class="bd_input")
+          label(for="bdColor",class="bd_label") 颜色
+          input(type="text",id="bdColor",class="bd_input",placeholder="#ff0000")
+          label(for="bdWidth",class="bd_label") 宽度
+          input(type="text",id="bdWidth",class="bd_input",placeholder="默认1px")
+          button(class="btn",id="setBd") 应用样式
+          button(class="btn",id="changeBg") 换个背景
+          button(class="btn",id="clearContent",style="margin-right:20px") 清空图片
+        input(type="text",id="pasteInput",class="paste_input",placeholder="截屏后粘贴到输入框中")
+      canvas(id="canvas",width=0,height=0,style="display:none")
+      span(id="info",class="info") 0*0
+        //- input(id="hiddenInput",class="hidden_input")
+        //- input(type="button",value="复制代码",class="btn")#copyCode
+        <!-- span 截图后点击输入框，然后粘贴，就能出现图片（缩略图），其地址是base64编码格式，本打算点击某按钮则复制该图片的地址，但发现clipboard的方法不兼容，又尝试弄一隐藏的输入框，发现容易卡死，所以作罢。 -->
+    span.switch#toPaste(data-text="上传版")
+    script(src="js/simple.js")
